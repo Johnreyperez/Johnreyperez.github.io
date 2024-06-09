@@ -15,25 +15,23 @@
           <h1>Poging Tao</h1>
   
           <img src="received_475888191763749.jpeg" alt="ako" class="img-thumbnail" style="width:600px; height:600px;"/>
-        <button type="button" id="btnLike1" class="btn btn-primary"> Like </button> <button type="button" class="btn btn-danger"> Dislike </button>
+        <button type="button" id="btnLike1" class="btn btn-primary"> Like </button> <button type="button" id="btnDislike1" class="btn btn-danger"> Dislike </button>
         <output id=count1> 0 </output>
       </div>
         <div class="col-6">
         <h1>Poging Tao Parin syempre</h1>
         <img src="IMG_20240503_194810_708.jpg" alt="ako" class="img-thumbnail" style="width:600px; height:600px;"/>
-          <button type="button" id="btnLike2" class="btn btn-primary"> Like </button> <button type="button" class="btn btn-danger"> Dislike </button>
+          <button type="button" id="btnLike2" class="btn btn-primary"> Like </button> <button type="button" id="btnDislike" class="btn btn-danger"> Dislike </button>
         <output id=count2> 0 </output>
         </div>
     </div>
   </div>
-  <div><center>
-        <h2>Leave a Comment</h2>
-        <form action="#" method="post">
-            <textarea name="comment" placeholder="Write your comment here..." required></textarea>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
-  </center> </div>
+   <div class="col-4">
+      Comments<br>
+     <input type="text" class="form-control" id="comment"/>
+     <button class="btn btn-success" id="submit"> Submit </button>
+       <textarea class="form-control" id="commentbox" rows="20"></textarea>
+   </div>
   <script src="index.js"></script>
 
 </body>
