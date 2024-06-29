@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         totalInput.value = formatCurrency(total);
         cartsTextarea.value = cartText.trim();
-        calculateChange(); // Call calculateChange whenever the cart is updated
+        calculateChange(); 
     }
 
     function calculateChange() {
