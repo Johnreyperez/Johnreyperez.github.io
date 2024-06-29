@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         totalInput.value = total.toFixed(2);
         cartsTextarea.value = cartText.trim();
-        calculateChange();
+        calculateChange(); // Call calculateChange whenever the cart is updated
     }
 
     function calculateChange() {
@@ -52,5 +52,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     for (let i = 1; i <= 6; i++) {
         qtyInputs['qty' + i].addEventListener('input', updateCart);
     }
+
     cashInput.addEventListener('input', calculateChange);
 });
