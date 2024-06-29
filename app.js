@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const changeInput = document.getElementById('change');
     const cartsTextarea = document.getElementById('carts');
 
+    function formatCurrency(amount) {
+        return '₱' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    }
+
     function updateCart() {
         let total = 0;
         let cartText = '';
@@ -33,20 +37,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (qty > 0) {
                 const productName = document.getElementById('product' + i).innerText;
-                cartText += `${productName} - Quantity: ${qty}, Price: ${(qty * price).toFixed(2)}\n`;
+                cartText += `${productName} - Quantity: ${qty}, Price: ${formatCurrency(qty * price)}\n`;
             }
         }
 
-        totalInput.value = total.toFixed(2);
+        totalInput.value = formatCurrency(total);
         cartsTextarea.value = cartText.trim();
         calculateChange(); // Call calculateChange whenever the cart is updated
     }
 
     function calculateChange() {
-        const total = parseFloat(totalInput.value) || 0;
+        const total = parseFloat(totalInput.value.replace(/[₱,]/g, '')) || 0;
         const cash = parseFloat(cashInput.value) || 0;
         const change = cash - total;
-        changeInput.value = change.toFixed(2);
+        changeInput.value = formatCurrency(change);
     }
 
     for (let i = 1; i <= 6; i++) {
