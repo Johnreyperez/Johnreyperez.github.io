@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         totalInput.value = total.toFixed(2);
         cartsTextarea.value = cartText.trim();
+        calculateChange(); // Call calculateChange whenever the cart is updated
     }
 
     function calculateChange() {
